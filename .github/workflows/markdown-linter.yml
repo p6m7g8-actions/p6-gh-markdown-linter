@@ -1,0 +1,21 @@
+name: "Github Action Linter"
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Run all workflow linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5.0.0
+
+      - name: Run P6 Markdown Linter
+        uses: ./

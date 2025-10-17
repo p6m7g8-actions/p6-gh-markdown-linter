@@ -1,0 +1,17 @@
+name: "P6 GHA: Markdown Linter"
+description: "P6 GHA: Markdown Linter"
+author: "Philip M. Gollucci"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v5.0.0
+    - name: Setup Node
+      uses: p6m7g8-actions/node-setup@main
+    - name: Install markdownlint-cli
+      shell: bash
+      run: pnpm install -g markdownlint-cli
+    - name: Run markdownlint
+      shell: bash
+      run: markdownlint '**/*.md' --ignore node_modules --ignore components --ignore services
