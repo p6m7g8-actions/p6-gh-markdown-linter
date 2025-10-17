@@ -11,7 +11,7 @@ runs:
       uses: p6m7g8-actions/node-setup@main
     - name: Install markdownlint-cli
       shell: bash
-      run: pnpm install -g markdownlint-cli
+      run: npm install -g markdownlint-cli
     - name: Run markdownlint
       shell: bash
       run: markdownlint '**/*.md' --ignore node_modules --ignore components --ignore services

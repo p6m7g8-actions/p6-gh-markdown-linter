@@ -1,9 +1,7 @@
-name: "Github Action Linter"
+name: "GitHub Markdown Linter"
 
 on:
-  pull_request:
-    branches:
-      - main
+  pull_request: {}
 
 permissions:
   contents: read
