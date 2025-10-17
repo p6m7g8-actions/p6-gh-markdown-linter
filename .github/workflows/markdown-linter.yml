@@ -1,4 +1,4 @@
-name: "Github Markdown Linter"
+name: "GitHub Markdown Linter"
 
 on:
   pull_request: {}
