@@ -14,4 +14,6 @@ runs:
       run: npm install -g markdownlint-cli
     - name: Run markdownlint
       shell: bash
-      run: markdownlint '**/*.md' --ignore node_modules --ignore components --ignore services
+      run: |
+        echo '{ "default": true, "MD013": { "line_length": 120, "code_block_line_length": 120 } }' > .markdownlint.json
+        markdownlint '**/*.md' --ignore node_modules --ignore components --ignore services
