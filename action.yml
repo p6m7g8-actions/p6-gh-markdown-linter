@@ -2,17 +2,29 @@ name: "P6 GHA: Markdown Linter"
 description: "P6 GHA: Markdown Linter"
 author: "Philip M. Gollucci"
 
+inputs:
+  markdownlint:
+    description: "Runs markdownlint"
+    required: false
+    default: "true"
+
 runs:
   using: "composite"
   steps:
     - name: Checkout code
       uses: actions/checkout@v5.0.0
+
     - name: Setup Node
+      if: ${{ inputs.markdownlint == 'true' }}
       uses: p6m7g8-actions/node-setup@main
+
     - name: Install markdownlint-cli
+      if: ${{ inputs.markdownlint == 'true' }}
       shell: bash
       run: npm install -g markdownlint-cli
+
     - name: Run markdownlint
+      if: ${{ inputs.markdownlint == 'true' }}
       shell: bash
       run: |
         echo '{ "default": true, "MD013": { "line_length": 120, "code_block_line_length": 120 } }' > .markdownlint.json
