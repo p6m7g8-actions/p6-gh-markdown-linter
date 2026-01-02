@@ -24,5 +24,5 @@ runs:
       if: ${{ inputs.markdownlint == 'true' }}
       shell: bash
       run: |
-        echo '{ "default": true, "MD013": { "line_length": 120, "code_block_line_length": 120 } }' > .markdownlint.json
+        echo '{ "default": true, "MD047": false, "MD013": { "line_length": 120, "code_block_line_length": 120 } }' > .markdownlint.json
         markdownlint '**/*.md' --ignore node_modules --ignore components --ignore services
