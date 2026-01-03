@@ -11,9 +11,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Checkout code
-      uses: actions/checkout@v5.0.0
-
     - name: Setup Node
       if: ${{ inputs.markdownlint == 'true' }}
       uses: p6m7g8-actions/node-setup@main
