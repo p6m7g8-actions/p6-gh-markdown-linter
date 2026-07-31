@@ -13,7 +13,7 @@ runs:
   steps:
     - name: Setup Node
       if: ${{ inputs.markdownlint == 'true' }}
-      uses: p6m7g8-actions/node-setup@main
+      uses: p6m7g8-actions/p6-node-setup@main
 
     - name: Install markdownlint-cli
       if: ${{ inputs.markdownlint == 'true' }}
